@@ -1,12 +1,32 @@
 const {app, BrowserWindow} = require('electron')
 
+const loadPage = async (mainWindow, startingWindow) => {
+  try {
+    await mainWindow.loadURL('http://localhost:3000')
+
+    await startingWindow.close()
+    await mainWindow.show()
+  } catch(error) {
+    loadPage(mainWindow, startingWindow)
+  }
+}
+
 const createWindow = () => {
-  const win = new BrowserWindow({
+  const mainWindow = new BrowserWindow({
     width: 800,
     height: 800
   })
 
-  win.loadFile('index.html')
+  mainWindow.hide()
+
+  const startingWindow = new BrowserWindow({
+    width: 400,
+    height: 200
+  })
+
+  startingWindow.loadFile('index.html')
+
+  loadPage(mainWindow, startingWindow)
 }
 
 app.whenReady().then(() => {

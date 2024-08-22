@@ -5,7 +5,7 @@
   "main": "./electron/main.js",
   "scripts": {
     "test": "echo \"test is not implemented yet!\"",
-    "start": "concurrently \"next dev\" \"electron .\"",
+    "start": "concurrently \"next dev ./renderer\" \"electron .\"",
     "dev": "next dev ./renderer",
     "build": "next build",
     "lint": "next lint"
