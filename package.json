@@ -1,0 +1,47 @@
+{
+  "name": "electron-nextjs-boilerplate",
+  "version": "1.0.0",
+  "description": "Electron with NextJS fully working as front/back end.",
+  "main": "./electron/main.js",
+  "scripts": {
+    "test": "echo \"test is not implemented yet!\"",
+    "start": "concurrently \"next dev\" \"electron .\"",
+    "dev": "next dev ./renderer",
+    "build": "next build",
+    "lint": "next lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ctdesing/electron-nextJS-ts-taildwind-prisma-template.git"
+  },
+  "keywords": [
+    "electron",
+    "prisma",
+    "nextjs",
+    "tailwind",
+    "typescript"
+  ],
+  "author": "Miguel Arias",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/ctdesing/electron-nextJS-ts-taildwind-prisma-template/issues"
+  },
+  "homepage": "https://github.com/ctdesing/electron-nextJS-ts-taildwind-prisma-template#readme",
+  "dependencies": {
+    "next": "14.2.6",
+    "react": "^18",
+    "react-dom": "^18"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "concurrently": "^8.2.2",
+    "electron": "^32.0.1",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.6",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  }
+}
