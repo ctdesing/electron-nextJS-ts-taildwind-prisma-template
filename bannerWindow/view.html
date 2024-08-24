@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
+  <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./style.css" rel="stylesheet">
+  <title>Hello from Electron renderer!</title>
+</head>
+
+<body>
+  <section>
+    <div>
+      <div class="img-md" id="img-display"></div>
+    </div>
+    <div>
+      <h2>Electron NextJS Boilerplate</h2>
+    </div>
+    <div id="loading-outer">
+      <div id="loading-inner"></div>
+    </div>
+  </section>
+
+  <script src="./script.js"></script>
+</body>
+
+</html>

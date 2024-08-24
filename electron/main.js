@@ -11,26 +11,26 @@ const loadPage = async (mainWindow, startingWindow) => {
   }
 }
 
-const createWindow = () => {
+const createWindow = async () => {
   const mainWindow = new BrowserWindow({
     width: 800,
-    height: 800
+    height: 800,
+    show: false,
   })
-
-  mainWindow.hide()
 
   const startingWindow = new BrowserWindow({
     width: 400,
-    height: 200
+    height: 200,
+    frame: false
   })
 
-  startingWindow.loadFile('index.html')
+  await startingWindow.loadFile('bannerWindow/view.html')
 
-  loadPage(mainWindow, startingWindow)
+  await loadPage(mainWindow, startingWindow)
 }
 
-app.whenReady().then(() => {
-  createWindow()
+app.whenReady().then(async () => {
+  await createWindow()
 
   app.on('activate', () => {
     if (BrowserWindow.getAllWindows().length === 0) createWindow()
